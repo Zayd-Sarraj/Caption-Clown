@@ -4,8 +4,12 @@
 ​
 #### By Zayd, Parth, Warren, Nadia, Edward
 ​
+## Direct link to app
+​
+https://polar-harbor-60783.herokuapp.com/
+​
 ## Description
-
+​
 - Share funny photos with your friends and try to make the funniest captions!
 - Users can post funny or interesting images along with a caption (or not)
 - Other users can add new captions or vote on existing captions
