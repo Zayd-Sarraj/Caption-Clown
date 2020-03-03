@@ -1,0 +1,21 @@
+{{!-- <!-- Page Title --> --}}
+<div class="text-body text-center mt-3 pt-2">
+    <div class="card-header" style="width: 39%; position: relative; right: 50px;">
+        <h6 class="mt-1">New Post</h6>
+    </div>
+</div>
+{{!-- New Post Form --}}
+<div class="container login-form py-2 mt-2 text-center" style="width: 40%;">
+    <form action="api/newPost" method="POST">
+        <div class="form-group text-center">
+            <label for="title">Enter a Title for your post</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+        </div>
+        <div class="text-center">
+            <input class="hidden" name="image" id="image" type="hidden" value={{{file}}} readonly>
+            <img src="{{{file}}}" alt="" style="height: 75%; width: 90%" />
+        </div>
+            <button type="submit" class="btn login-btn my-2 text-white">Submit</button>
+            
+    </form>
+</div>

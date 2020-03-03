@@ -1,0 +1,60 @@
+{{!-- <!-- Page Title --> --}}
+<div class="text-body text-center mt-3 pt-2">
+    <div class="card-header" style="width: 39%; position: relative; right: 50px;">
+        <h6 class="mt-1">New Caption</h6>
+    </div>
+</div>
+{{#each posts}}
+<!-- Each post starts here -->
+<div class="row text-center mb-4">
+    <div class="card-group" style="width: 50%;">
+        <div class="card">
+
+            <!--Title-->
+            <div class="desc-sm-1 pt-4 mb-2">
+                <h5 class="title text-center">{{dataValues.title}}</h5>
+            </div>
+
+            <!--Picture-->
+            <img src="../../{{dataValues.image}}" alt="{{dataValues.id}}" id="{{dataValues.id}}" style="width:100%"
+                class="hover-shadow cursor">
+
+            <form action="api/postCaption/{{dataValues.id}}" method="POST">
+
+                <div class="input-group mt-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter Caption:</span>
+                    </div>
+                    <textarea class="form-control" id="caption" name="text"></textarea>
+                </div>
+                <button type="submit" class="btn login-btn my-2 text-white">Submit</button>
+            </form>
+
+
+            {{#each Captions}}
+            <!-- Captions -->
+            <div class="row mx-1" style="width: 95%;">
+                <div class="col-11">
+                    <div class="card-text border rounded bg-light mb-2 pt-3 px-2">
+                        <p class="ml-2">{{dataValues.text}}</p>
+                        <p class="card-text mb-1 text-right"><small class="text-muted">Captioner:
+                                {{dataValues.author}}</small>
+                    </div>
+                </div>
+
+                <!-- Upvote image and number -->
+                <div class="col-1 px-0 my-auto">
+                    <div class="row">
+                        <img src="../../assets/sampleimg/upvote.png" alt="upvote" height="30px" width="30px"
+                            style="background: transparent;">
+                        <h5 class="text-right"> {{dataValues.noOfVotes}} </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- ^ Each caption ends ^-->
+            {{/each}}
+        </div>
+    </div>
+</div>
+<!-- ^ Each post ends ^ -->
+{{/each}}
